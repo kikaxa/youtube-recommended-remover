@@ -1,0 +1,38 @@
+{
+  "web_accessible_resources": [
+    "icons/icon64.png", 
+    "includes/script.js"
+  ], 
+  "description": "Remove 'recommended' ads on YouTube",
+  "icons": {
+    "128": "icons/icon64.png"
+  }, 
+  "manifest_version": 2, 
+  "name": "YouTube 'recommended' ads remover",
+  "version": "1.0",
+  "background": {
+    "page": "index.html"
+  }, 
+  "content_scripts": [
+    {
+      "all_frames": true, 
+      "matches": [
+        "*://youtube.com/*", 
+        "*://*.youtube.com/*"
+      ], 
+      "run_at": "document_start", 
+      "js": [
+        "includes/script.js"
+      ]
+    }
+  ], 
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'unsafe-eval';",
+  "permissions": [
+    "*://youtube.com/*", 
+    "*://*.youtube.com/*"
+  ], 
+  "developer": {
+    "url": "https://github.com/kikaxa",
+    "name": "Kix"
+  }
+}
