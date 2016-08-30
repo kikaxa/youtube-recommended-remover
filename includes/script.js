@@ -36,7 +36,7 @@ removeBleagh = function() {
 
     if (list === null) {
         console.log("related list not found. new interface? or just search page...");
-        return;
+        return false;
     }
     if (observer === null)
         observer = new MutationObserver(removeBleagh);
@@ -66,6 +66,7 @@ removeBleagh = function() {
 
     var config = { childList: true, subtree: true };
     observer.observe(list, config);
+    return true;
 }
 
 var oldURL = "";
@@ -79,7 +80,8 @@ function checkURLchange(currentURL){
 document.addEventListener( "DOMContentLoaded",
 function () {
 
-    removeBleagh();
+    if (!removeBleagh())
+        setTimeout(removeBleagh, 1000);
 
     oldURL = window.location.href;
     setInterval(function() {checkURLchange(window.location.href);
