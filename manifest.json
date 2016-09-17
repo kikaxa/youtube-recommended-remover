@@ -9,7 +9,7 @@
   }, 
   "manifest_version": 2, 
   "name": "YouTube 'recommended' ads remover",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "background": {
     "page": "index.html"
   }, 

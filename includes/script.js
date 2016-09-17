@@ -50,7 +50,7 @@ removeBleagh = function() {
         j++;
         for (i = 0; i < list2.length; i++) {
             if ((!new_iface || list2[i].id == "views") &&
-                    list2[i].textContent == "Recommended for you") {
+                    list2[i].textContent.includes("Recommended for you")) {
                 c++;
 
                 var e = list2[i];
